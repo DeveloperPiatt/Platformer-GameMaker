@@ -30,6 +30,7 @@
 spd = 5;
 hspd = 0;
 vspd = 0;
+grav = 1.5;
 </string>
           </argument>
         </arguments>
@@ -59,6 +60,8 @@ var left = keyboard_check(vk_left);
 var up = keyboard_check(vk_up);
 var down = keyboard_check(vk_down);
 
+
+
 if (right) {
     hspd = spd;
 }
@@ -67,21 +70,14 @@ if (left) {
     hspd = -spd;
 }
 
-if (up) {
-    vspd = -spd;
-}
-
-if (down) {
-    vspd = spd;
-}
-
 // Friction
 if (!right &amp;&amp; !left) {
     hspd = 0;
 }
 
-if (!up &amp;&amp; !down) {
-    vspd = 0;
+if (!place_meeting(x, y+1, Solid)) {
+    // we are in the air, nothing under us
+    vspd += grav;
 }
 
 // X-Collision
