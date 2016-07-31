@@ -60,7 +60,18 @@ var left = keyboard_check(vk_left);
 var up = keyboard_check(vk_up);
 var down = keyboard_check(vk_down);
 
-
+// Gravity
+if (!place_meeting(x, y+1, Solid)) {
+    // we are in the air, nothing under us
+    vspd += grav;
+} else {
+    vspd = 0;
+    
+    // Jump code
+    if (up) {
+        vspd = -16;
+    }
+}
 
 if (right) {
     hspd = spd;
@@ -73,11 +84,6 @@ if (left) {
 // Friction
 if (!right &amp;&amp; !left) {
     hspd = 0;
-}
-
-if (!place_meeting(x, y+1, Solid)) {
-    // we are in the air, nothing under us
-    vspd += grav;
 }
 
 // X-Collision
