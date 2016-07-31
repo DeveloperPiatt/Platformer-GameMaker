@@ -92,23 +92,7 @@ if (!right &amp;&amp; !left) {
     hspd = 0;
 }
 
-// X-Collision
-if (place_meeting(x+hspd, y, Solid)) {
-    while (!place_meeting(x+sign(hspd), y, Solid)) {
-        x += sign(hspd);
-    }
-    hspd=0;
-}
-x += hspd;
-
-// Y-Collison
-if (place_meeting(x, y+vspd, Solid)) {
-    while (!place_meeting(x, y+sign(vspd), Solid)) {
-        y += sign(vspd);
-    }
-    vspd=0;
-}
-y += vspd;
+move(Solid);
 </string>
           </argument>
         </arguments>
