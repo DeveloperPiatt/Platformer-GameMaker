@@ -39,22 +39,24 @@ if (!place_meeting(x, y+1, Solid)) {
     }
 }
 
-if (right) {
-    hspd = spd;
-}
-
-if (left) {
-    hspd = -spd;
+if (right || left) {
+    hspd += (right-left)*acc;
+    hspd_dir = (right-left);
+    
+    if (hspd > spd) {
+        hspd = spd;
+    }
+    
+    if (hspd < -spd) {
+        hspd = -spd;
+    }
+} else {
+    apply_friction(acc);
 }
 
 // Flips the sprite to face correct direction
 if (hspd != 0) {
     image_xscale = sign(hspd);
-}
-
-// Friction
-if (!right && !left) {
-    hspd = 0;
 }
 
 move(Solid);

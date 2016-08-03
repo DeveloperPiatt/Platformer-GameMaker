@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>/// Init the player object
 
-spd = 5;
+spd = 8;
+acc = 2;
 hspd = 0;
 vspd = 0;
 grav = 1.5;
