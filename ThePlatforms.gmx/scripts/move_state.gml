@@ -11,6 +11,11 @@ if (!place_meeting(x, y+1, Solid)) {
     // we are in the air, nothing under us
     vspd += grav;
     
+    // Player is in the air
+    sprite_index = spr_player_jump;
+    image_speed = 0;
+    image_index = (vspd > 0);
+    
     // control jump height
     if (up_release && vspd < -6) {
         vspd = -6;
@@ -21,6 +26,16 @@ if (!place_meeting(x, y+1, Solid)) {
     // Jump code
     if (up) {
         vspd = -16;
+    }
+    
+    // Player is on the ground
+    if (hspd == 0) {
+        // not moving
+        sprite_index = spr_player_idle;
+    } else {
+        // moving
+        sprite_index = spr_player_walk;
+        image_speed = .6;
     }
 }
 
@@ -63,6 +78,6 @@ if (falling && wasnt_wall && is_wall) {
     while (position_meeting(x+17*image_xscale, y-1, Solid)) {
         y -= 1;
     }
-
+    sprite_index = spr_player_ledge_grab;
     state = ledge_grab_state;
 }
