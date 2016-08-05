@@ -25,7 +25,7 @@ if (!place_meeting(x, y+1, Solid)) {
     
     // Jump code
     if (up) {
-        vspd = -16;
+        vspd = -jspd;
     }
     
     // Player is on the ground

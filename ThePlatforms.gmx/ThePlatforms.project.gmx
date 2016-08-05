@@ -26,6 +26,9 @@
       <sprite>sprites\spr_spider</sprite>
       <sprite>sprites\spr_enemy_mask</sprite>
     </sprites>
+    <sprites name="GUI Icons">
+      <sprite>sprites\spr_heart</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -38,6 +41,7 @@
     <scripts name="Player States">
       <script>scripts\move_state.gml</script>
       <script>scripts\ledge_grab_state.gml</script>
+      <script>scripts\hurt_state.gml</script>
     </scripts>
     <scripts name="Snake States">
       <script>scripts\snake_move_right_state.gml</script>
@@ -55,12 +59,14 @@
   <objects name="objects">
     <objects name="Player">
       <object>objects\Player</object>
+      <object>objects\PlayerStats</object>
     </objects>
     <objects name="Level">
       <object>objects\Solid</object>
       <object>objects\Dirt</object>
     </objects>
     <objects name="Enemies">
+      <object>objects\EnemyParent</object>
       <object>objects\Snake</object>
       <object>objects\Bat</object>
       <object>objects\Spider</object>
