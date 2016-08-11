@@ -39,6 +39,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bg_dirt</background>
+    <background>background\bg_sky</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -92,6 +93,9 @@
   <rooms name="rooms">
     <room>rooms\rm_one</room>
     <room>rooms\rm_two</room>
+    <room>rooms\rm_three</room>
+    <room>rooms\rm_four</room>
+    <room>rooms\rm_five</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
