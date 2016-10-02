@@ -89,6 +89,7 @@
     <objects name="Effects">
       <object>objects\Blood</object>
     </objects>
+    <object>objects\Control</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
